@@ -31,7 +31,7 @@ def first_factorial(num, includeFormula = False):
 
     return formula + str(factorial)
 
-# Time conversion (whole number* to H:M - *user entered)
+# Time conversion convert minutes to hours and minutes in H:M format
 def time_convert(to_convert):
     # calculate the hours by dividing the input by 60, and removing decimal places via math.trunc
     hours = math.trunc(to_convert/60)
