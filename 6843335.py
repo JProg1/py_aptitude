@@ -1,8 +1,5 @@
 # Candidate ID 6843335 - James Cotton
 
-# importing math for factorial function and trunc function
-import math
-
 # seperator used for formatting to easily see when we have removed to the next test
 def print_seperator():
     print('#######################')
@@ -16,25 +13,25 @@ def first_factorial(num, includeFormula = False):
         formula = '('
         # save a repeat value we can edit
         _num = int(num)
+        factorial = int(num)
         # get factorial calulcations via loop while removing 1 each time, until we get to 2, where we add on the final 1 after and correct the string formatting (adding a bracket and equals)
-        # Calculations could be added here in an alterative to using the math library.
+        # Calculations are also done while building the string
         while int(_num) >= 2:
             # build string by adding onto it the next number in the squence
             formula += str(_num) + ' * '
+            # calulate this section of the factorial
             _num-=1
+            factorial = factorial * int(_num)
             pass
         formula+= '1) = '
         pass
-
-    # get the actual factorial from the inputted number
-    factorial = math.factorial(int(num))
 
     return formula + str(factorial)
 
 # Time conversion convert minutes to hours and minutes in H:M format
 def time_convert(to_convert):
     # calculate the hours by dividing the input by 60, and removing decimal places via math.trunc
-    hours = math.trunc(to_convert/60)
+    hours = int(to_convert/60)
     # caclulate minutes by removing the amount of hours determinted above (60 x hours) 
     minutes = to_convert - (60 * hours)
     # print result
